@@ -1,0 +1,57 @@
+.one{
+    color: maroon;
+    background-color: blanchedalmond;
+}
+.second{
+    color: rgb(55, 0, 121);
+    background-color:rgba(97, 0, 0, 0.3)
+}
+h2,h3{
+    color: rgb(94, 1, 80);
+    background-color: rgba(173, 200, 84, 0.943);
+}
+div p{
+    margin: top 10px;;
+    margin-right: 0cap;
+    margin-left :10px;
+    margin: bottom 10px; 
+}
+div p.c1{
+    border-color: rgb(242, 255, 0);
+    border-style: dashed;
+}
+div p.c2{
+    border-color: rgb(90, 75, 254);
+    border-style:dotted;
+       
+}
+div p.c3{
+    border-color: rgb(1, 33, 13);
+    border-style:groove;
+    border-radius:150px;
+    border-width:20px;
+    background-color: beige;
+    margin-right: 130px;
+    margin-left :100px;
+    margin: bottom 100px; 
+    padding: 20px 15px 15px; 
+}
+.highlight {
+    color: blue;
+    font-weight: bold;
+}
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: green;
+}
