@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music World 🎵</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+        }
+
+        header{
+            background:linear-gradient(90deg,#101820,#3a4750);
+            color:white;
+            padding:20px;
+            text-align:center;
+            position:relative;
+        }
+
+        .logout-btn{
+            position:absolute;
+            right:20px;
+            top:20px;
+            color:white;
+            background:#2e3640;
+            padding:8px 15px;
+            border-radius:6px;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .page{ display:none; }
+
+        #home:target ~ #homePage,
+        body:not(:target) #homePage{
+            display:block;
+        }
+
+        #dashboard:target ~ #dashboardPage{
+            display:block;
+        }
+
+        .login-bg{
+            background:linear-gradient(135deg,#0f1a2b,#1b2d4a,#2f425e);
+            padding:50px 0;
+        }
+
+        .form-box{
+            background:#f4f4f4;
+            width:350px;
+            margin:40px auto;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 12px rgba(0,0,0,0.3);
+        }
+
+        input, select{
+            width:100%;
+            padding:10px;
+            margin-bottom:12px;
+            border-radius:5px;
+            border:1px solid #2f425e;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:#1c2a3a;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        .dashboard-bg{
+            background:linear-gradient(180deg,#0a0a0a,#1a1a1a,#2b2b2b);
+            min-height:100vh;
+        }
+
+        .emoji-bar{
+            width:100%;
+            overflow:hidden;
+            white-space:nowrap;
+            background:#0a0a0a;
+            padding:10px 0;
+            font-size:28px;
+            color:white;
+        }
+
+        .emoji-scroll{
+            display:inline-block;
+            animation: scroll 12s linear infinite;
+        }
+
+        @keyframes scroll{
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+            gap:20px;
+            padding:20px;
+        }
+
+        .artist-box{
+            background:#f7f7f7;
+            border-radius:12px;
+            box-shadow:0px 0px 15px rgba(255,255,255,0.05);
+            padding:15px;
+            text-align:center;
+        }
+
+        .artist-box img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+            border-radius:12px;
+        }
+
+        .song-list{
+            text-align:left;
+            margin-top:10px;
+        }
+
+        .song-list li{
+            padding:5px 0;
+            color:#1c2a3a;
+            font-weight:600;
+        }
+
+        footer{
+            background:linear-gradient(90deg,#101820,#3a4750);
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="home"></div>
+<div id="dashboard"></div>
+
+<div id="homePage" class="page login-bg">
+    <header>
+        <h1>🎶 Welcome to Music World 🎶</h1>
+    </header>
+
+    <div class="form-box">
+        <h2>Login 🎧</h2>
+        <form onsubmit="goDashboard(event)">
+            <label>Name</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Password</label>
+            <input type="password" required>
+
+            <label>Select Role</label>
+            <select required>
+                <option>Listener</option>
+                <option>Artist</option>
+                <option>Producer</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <footer>© 2025 Music World | All Rights Reserved</footer>
+</div>
+
+<div id="dashboardPage" class="page dashboard-bg">
+    <header>
+        <h1>🎤 Music Dashboard</h1>
+        <a class="logout-btn" href="#home">Logout</a>
+    </header>
+
+    <h2 style="text-align:center; color:#d9d9d9;">Top Artists</h2>
+
+    <div class="grid">
+
+        <div class="artist-box">
+            <img src="https://singersroom.com/wp-content/uploads/2023/04/The-Weeknd-Songs-of-All-Time.jpg">
+            <h3>The Weeknd</h3>
+            <ul class="song-list">
+                <li>Blinding Lights</li>
+                <li>Starboy</li>
+                <li>Save Your Tears</li>
+                <li>Die For You</li>
+                <li>Call Out My Name</li>
+            </ul>
+        </div>
+
+        <div class="artist-box">
+            <img src="https://i0.wp.com/popkultur.de/wp-content/uploads/2017/05/eminemneu.jpg">
+            <h3>Eminem</h3>
+            <ul class="song-list">
+                <li>Without Me</li>
+                <li>Mockingbird</li>
+                <li>Stan</li>
+                <li>The Real Slim Shady</li>
+                <li>Superman</li>
+            </ul>
+        </div>
+
+        <div class="artist-box">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.OTW8sT6ovhKkxvfqw3CobgHaE8?w=1200&h=800&rs=1&pid=ImgDetMain&o=7&rm=3">
+            <h3>Taylor Swift</h3>
+            <ul class="song-list">
+                <li>Love Story</li>
+                <li>Shake It Off</li>
+                <li>Blank Space</li>
+                <li>Cardigan</li>
+                <li>You Belong With Me</li>
+            </ul>
+        </div>
+
+        <div class="artist-box">
+            <img src="https://i.pinimg.com/originals/35/0e/9f/350e9f4fd404db7a5e03ccc85c1065d2.jpg">
+            <h3>BTS</h3>
+            <ul class="song-list">
+                <li>Dynamite</li>
+                <li>Butter</li>
+                <li>Boy With Luv</li>
+                <li>Fake Love</li>
+                <li>Spring Day</li>
+            </ul>
+        </div>
+
+        <div class="artist-box">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.VSRfgjbNVnx9BtGSDqbuDwHaFj?rs=1&pid=ImgDetMain">
+            <h3>Billie Eilish</h3>
+            <ul class="song-list">
+                <li>Bad Guy</li>
+                <li>Lovely</li>
+                <li>Everything I Wanted</li>
+                <li>Ocean Eyes</li>
+                <li>Bury a Friend</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>© 2025 Music World | Dashboard</footer>
+</div>
+
+<script>
+function goDashboard(event){
+    event.preventDefault();
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("dashboardPage").style.display = "block";
+}
+</script>
+
+</body>
+</html>
