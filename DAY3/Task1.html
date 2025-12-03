@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            background-color: rgb(255,0,0);
+            border-radius:10px;
+            border-style:hidden;
+            color: white;
+            cursor: pointer;
+            width:200PX;
+            height:40px;
+            font-size: medium;
+        }
+        .btn:hover{
+          opacity:0.6;
+        }
+        div{
+          margin-top:100px;
+          margin-left:100px;
+          width:350px;
+          height:300px;
+          border: solid black;
+        }
+        h1{
+            position: relative;
+            top: 10px;
+            left:30px;
+ 
+        }
+        h2 {
+    position: sticky;
+    top: 0;
+    background: #333;
+    color: white;
+    padding: 10px;
+    }
+    .one{
+        background-color: black;
+        width:80px;
+        height:80px;
+          margin:5px;
+        position: relative;
+        top:50px;
+        left:60px;
+        border-style: hidden;
+        z-index: 5px;
+    }
+    .two{
+        background-color: rgb(255,0,0);
+        width:80px;
+        height:80px;
+          margin:5px;
+        position: relative;
+          border-style: hidden;
+          z-index:10px;
+    }
+    .three{
+        background-color:rgb(255,0,0);
+        width:80px;
+        height:80px;
+        margin:5px;
+        position: relative;
+        border-style: hidden;
+    }
+    .vis{
+         width: 250px;
+  height: 200px;
+  background-color: rgba(255, 173, 143, 0.863);
+  overflow: visible;
+    }
+    .hidden{
+        width: 250px;
+        height: 250px;
+        background-color: rgba(156, 234, 255, 0.82);
+  overflow:hidden;
+    }
+     .scroll{
+           width: 250px;
+  height: 250px;
+  background-color: #b6fea0df;
+  overflow:scroll;
+    }
+     .auto{
+           width: 250px;
+  height:250px;
+  background-color: rgba(255, 164, 238, 0.829);
+  overflow:auto;
+    }
+        
+    </style>
+</head>
+<body>
+    <button class="btn">SUBSCRIBE</button>
+    <!--Absolute Relative-->
+    <div>
+        <h1>Hello</h1>
+    </div>
+    <!--Sticky-->
+    <h2> stays at the top </h2>
+    <p>Scroll down to see the sticky effect...</p>
+    <p style="height:500px;"></p>
+    <!--z-index-->
+   <div class="one"></div>
+   <div class="two"></div>
+   <div class="three"></div>
+<!--Overflow-->
+<h3>OVERFLOW VISIBLE</h3>
+<div class="vis">
+    <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, ex fugit expedita illum cum voluptates minus doloribus, reiciendis odio numquam minima sequi deserunt delectus corrupti. Maiores fuga quam possimus iure neque animi! Voluptatum facilis in voluptates doloribus odit aliquid molestias tempora ea ad. Cumque iste at nostrum? Ratione quidem dolor libero, aut sequi fugit saepe dicta error atque quae 
+</div><br><br>
+<h3>OVERFLOW HIDDEN</h3>
+<div class="hidden">
+ <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, ex fugit expedita illum cum voluptates minus doloribus, reiciendis odio numquam minima sequi deserunt delectus corrupti. Maiores fuga quam possimus iure neque animi! Voluptatum facilis in voluptates doloribus odit aliquid molestias tempora ea ad. Cumque iste at nostrum? Ratione quidem dolor libero, aut sequi fugit saepe dicta error atque quae 
+    </p>
+</div>
+<H3>OVERFLOW SCROLL</H3>
+<div class="scroll">
+ <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate earum mollitia tempora porro iure molestiae blanditiis ullam? Alias debitis veniam iusto atque necessitatibus nam consectetur! Explicabo obcaecati unde nisi officiis illum assumenda nostrum tenetur? Temporibus provident nemo quo, ratione aspernatur hic velit harum. Quae eligendi distinctio commodi at laboriosam dolor, aperiam quod porro qui maxime libero, error provident, nihil iste molestiae reiciendis non ducimus amet esse dolores pariatur fugit. Dolore!
+    </p>
+</div>
+<h3>OVERFLOW AUTO</h3>
+<div class="auto">
+ <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur animi blanditiis, itaque sit enim incidunt, quos dicta facilis nesciunt inventore rem necessitatibus accusantium tempora odit quaerat, laborum quia culpa. Consectetur nihil doloribus magnam ex perferendis labore blanditiis, totam impedit sit et, aliquam modi iusto rerum tempore? Ipsa aperiam, explicabo ab illo sapiente dolorem? Dolores id voluptatem unde quos et facere debitis, vitae aliquam explicabo autem iusto incidunt consectetur ipsam necessitatibus facilis eum amet nam assumenda architecto commodi nisi?
+    </p>
+</div>
+
+</body>
+</html>
