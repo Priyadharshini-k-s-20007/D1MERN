@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music World 🎵</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="m-0 font-sans">
+
+<!-- HOME -->
+<div id="homePage" class="min-h-screen bg-gradient-to-br from-[#0f1a2b] via-[#1b2d4a] to-[#2f425e]">
+
+    <header class="bg-gradient-to-r from-[#101820] to-[#3a4750] text-white p-6 text-center relative">
+        <h1 class="text-3xl md:text-4xl font-bold">🎶 Welcome to Music World 🎶</h1>
+    </header>
+
+    <div class="bg-gray-100 w-[90%] max-w-md mx-auto mt-10 p-6 rounded-xl shadow-lg">
+        <h2 class="text-xl font-bold mb-4 text-center">Login 🎧</h2>
+
+        <form onsubmit="goDashboard(event)" class="space-y-4">
+            <div>
+                <label class="font-semibold">Name</label>
+                <input type="text" required class="w-full p-2 border border-[#2f425e] rounded-md">
+            </div>
+
+            <div>
+                <label class="font-semibold">Email</label>
+                <input type="email" required class="w-full p-2 border border-[#2f425e] rounded-md">
+            </div>
+
+            <div>
+                <label class="font-semibold">Password</label>
+                <input type="password" required class="w-full p-2 border border-[#2f425e] rounded-md">
+            </div>
+
+            <div>
+                <label class="font-semibold">Select Role</label>
+                <select required class="w-full p-2 border border-[#2f425e] rounded-md">
+                    <option>Listener</option>
+                    <option>Artist</option>
+                    <option>Producer</option>
+                </select>
+            </div>
+
+            <button type="submit" class="w-full bg-[#1c2a3a] text-white py-2 rounded-md text-lg">
+                Login
+            </button>
+        </form>
+    </div>
+
+    <footer class="bg-gradient-to-r from-[#101820] to-[#3a4750] text-white text-center p-4 mt-10">
+        © 2025 Music World | All Rights Reserved
+    </footer>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardPage" class="min-h-screen hidden bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#2b2b2b] text-white">
+
+    <header class="bg-gradient-to-r from-[#101820] to-[#3a4750] p-6 text-center relative">
+        <h1 class="text-3xl font-bold">🎤 Music Dashboard</h1>
+        <a href="#home" onclick="logout()" class="absolute right-5 top-5 bg-[#2e3640] text-white px-4 py-2 rounded-md font-semibold text-sm">
+            Logout
+        </a>
+    </header>
+
+    <h2 class="text-center text-2xl text-gray-300 mt-6 mb-4">Top Artists</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 pb-10">
+
+        <!-- ARTIST CARD -->
+        <div class="bg-gray-100 text-black rounded-xl p-4 shadow-md">
+            <img class="rounded-xl h-48 w-full object-cover" src="https://singersroom.com/wp-content/uploads/2023/04/The-Weeknd-Songs-of-All-Time.jpg">
+            <h3 class="text-xl font-bold text-center mt-2">The Weeknd</h3>
+            <ul class="mt-3 font-semibold space-y-1">
+                <li>Blinding Lights</li>
+                <li>Starboy</li>
+                <li>Save Your Tears</li>
+                <li>Die For You</li>
+                <li>Call Out My Name</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-100 text-black rounded-xl p-4 shadow-md">
+            <img class="rounded-xl h-48 w-full object-cover" src="https://i0.wp.com/popkultur.de/wp-content/uploads/2017/05/eminemneu.jpg">
+            <h3 class="text-xl font-bold text-center mt-2">Eminem</h3>
+            <ul class="mt-3 font-semibold space-y-1">
+                <li>Without Me</li>
+                <li>Mockingbird</li>
+                <li>Stan</li>
+                <li>The Real Slim Shady</li>
+                <li>Superman</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-100 text-black rounded-xl p-4 shadow-md">
+            <img class="rounded-xl h-48 w-full object-cover" src="https://tse3.mm.bing.net/th/id/OIP.OTW8sT6ovhKkxvfqw3CobgHaE8">
+            <h3 class="text-xl font-bold text-center mt-2">Taylor Swift</h3>
+            <ul class="mt-3 font-semibold space-y-1">
+                <li>Love Story</li>
+                <li>Shake It Off</li>
+                <li>Blank Space</li>
+                <li>Cardigan</li>
+                <li>You Belong With Me</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-100 text-black rounded-xl p-4 shadow-md">
+            <img class="rounded-xl h-48 w-full object-cover" src="https://i.pinimg.com/originals/35/0e/9f/350e9f4fd404db7a5e03ccc85c1065d2.jpg">
+            <h3 class="text-xl font-bold text-center mt-2">BTS</h3>
+            <ul class="mt-3 font-semibold space-y-1">
+                <li>Dynamite</li>
+                <li>Butter</li>
+                <li>Boy With Luv</li>
+                <li>Fake Love</li>
+                <li>Spring Day</li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-100 text-black rounded-xl p-4 shadow-md">
+            <img class="rounded-xl h-48 w-full object-cover" src="https://tse2.mm.bing.net/th/id/OIP.VSRfgjbNVnx9BtGSDqbuDwHaFj">
+            <h3 class="text-xl font-bold text-center mt-2">Billie Eilish</h3>
+            <ul class="mt-3 font-semibold space-y-1">
+                <li>Bad Guy</li>
+                <li>Lovely</li>
+                <li>Everything I Wanted</li>
+                <li>Ocean Eyes</li>
+                <li>Bury a Friend</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer class="bg-gradient-to-r from-[#101820] to-[#3a4750] text-white text-center p-4">
+        © 2025 Music World | Dashboard
+    </footer>
+</div>
+
+<script>
+function goDashboard(event){
+    event.preventDefault();
+    document.getElementById("homePage").classList.add("hidden");
+    document.getElementById("dashboardPage").classList.remove("hidden");
+}
+
+function logout(){
+    document.getElementById("dashboardPage").classList.add("hidden");
+    document.getElementById("homePage").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
