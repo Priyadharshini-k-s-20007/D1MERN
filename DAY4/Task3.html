@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS Quiz</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0f172a] flex justify-center items-center min-h-screen p-4">
+
+<div class="w-full max-w-md">
+    <!-- Quiz Card -->
+    <div id="quiz-box" class="bg-[#1e293b] p-6 rounded-2xl shadow-xl hidden">
+        <p id="q-count" class="text-sm text-gray-400 mb-2"></p>
+        <h2 id="question" class="text-white text-lg font-medium mb-4"></h2>
+
+        <div id="options" class="space-y-3"></div>
+
+        <div class="flex justify-end mt-5">
+            <button id="nextBtn" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg hidden">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <!-- Result Card -->
+    <div id="result-box" class="bg-[#1e293b] p-8 rounded-2xl shadow-xl text-center hidden">
+        <h1 class="text-white text-2xl font-semibold mb-4">Quiz Completed!</h1>
+        <p id="score" class="text-lg text-gray-300 mb-6"></p>
+        <button onclick="location.reload()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+            Restart
+        </button>
+    </div>
+</div>
+
+<script>
+// QUIZ DATA
+const questions = [
+    {
+        q: "Which keyword declares a constant in JavaScript?",
+        options: ["var", "let", "const", "static"],
+        answer: 2
+    },
+    {
+        q: "Which method converts JSON to an object?",
+        options: ["JSON.parse()", "JSON.stringify()", "JSON.object()", "object.parse()"],
+        answer: 0
+    },
+    {
+        q: "What does the map() function return?",
+        options: ["A new array", "A single value", "An object", "Nothing"],
+        answer: 0
+    },
+    {
+        q: "Which operator checks strict equality?",
+        options: ["==", "===", "!=", "!=="],
+        answer: 1
+    },
+    {
+        q: "Which function runs after a delay?",
+        options: ["setTimeout()", "setInterval()", "delay()", "wait()"],
+        answer: 0
+    }
+];
+
+let index = 0;
+let score = 0;
+let selected = false;
+
+const quizBox = document.getElementById("quiz-box");
+const resultBox = document.getElementById("result-box");
+const questionText = document.getElementById("question");
+const qCount = document.getElementById("q-count");
+const optionsDiv = document.getElementById("options");
+const nextBtn = document.getElementById("nextBtn");
+const scoreText = document.getElementById("score");
+
+quizBox.classList.remove("hidden");
+loadQuestion();
+
+function loadQuestion() {
+    selected = false;
+    nextBtn.classList.add("hidden");
+
+    let q = questions[index];
+    qCount.innerText = `Question ${index + 1} of ${questions.length}`;
+    questionText.innerText = q.q;
+
+    optionsDiv.innerHTML = "";
+
+    q.options.forEach((opt, i) => {
+        let btn = document.createElement("button");
+        btn.className =
+            "w-full bg-[#334155] hover:bg-[#475569] text-white py-2 rounded-lg transition";
+        btn.innerText = opt;
+
+        btn.onclick = () => handleAnswer(btn, i);
+
+        optionsDiv.appendChild(btn);
+    });
+}
+
+function handleAnswer(button, i) {
+    if (selected) return;
+    selected = true;
+
+    let correctIndex = questions[index].answer;
+    let optionButtons = optionsDiv.children;
+
+    for (let b = 0; b < optionButtons.length; b++) {
+        optionButtons[b].classList.remove("hover:bg-[#475569]");
+
+        if (b === correctIndex) {
+            optionButtons[b].classList.add("bg-green-600");
+        }
+
+        if (b === i && b !== correctIndex) {
+            optionButtons[b].classList.add("bg-red-600");
+        }
+    }
+
+    if (i === correctIndex) score++;
+
+    nextBtn.classList.remove("hidden");
+}
+
+nextBtn.onclick = () => {
+    index++;
+    if (index >= questions.length) {
+        showResult();
+    } else {
+        loadQuestion();
+    }
+};
+
+function showResult() {
+    quizBox.classList.add("hidden");
+    resultBox.classList.remove("hidden");
+    scoreText.innerText = `Your Score: ${score}/${questions.length}`;
+}
+</script>
+
+</body>
+</html>
