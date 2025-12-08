@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Red Paragraph Demo</title>
+</head>
+<body>
+
+    <p id="myPara">This paragraph will turn red when the script runs.</p>
+
+    <script>
+        document.getElementById("myPara").style.color = "red";
+    </script>
+<p id="myPara">This paragraph will turn red when the script runs.</p>
+
+    <script>
+        const para=document.getElementById("myPara");
+        para.style.color="red";
+        para.style.background ="aqua";
+        para.style.fontsize="30px";
+    </script>
+<p class="text">Hello</p>
+    <p class="text">Hi</p>
+    <p class="text">Welcome</p>
+    
+    <script>
+        const para = document.getElementsByClassName("text");
+
+        for(let i = 0; i < para.length; i++){
+            para[i].style.color = "blue";
+            para[i].style.backgroundColor = "aquamarine";
+            para[i].style.fontSize = "30px";
+            para[i].style.fontFamily = "Times New Roman";
+        }
+    </script>
+
+function changeText(){
+        document.getElementById("p1").innerText = "Text changed using innerText!";
+    }
+<p id="p1">Hello</p>
+<button onclick="changeText()">Click</button>
+<script>
+    function changeText(){
+        document.getElementById("p1").innerText = "Text changed using innerText!";
+    }
+</script>
+
+
+</body>
+</html>

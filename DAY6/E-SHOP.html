@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veloria Trends</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+.page { display: none; }
+.show { display: block !important; }
+</style>
+
+</head>
+<body class="bg-gray-100">
+
+<!-- ========================= LOGIN PAGE ============================= -->
+<section id="loginPage" class="page show h-screen flex justify-center items-center">
+    <div class="bg-white w-96 p-8 shadow-xl rounded-xl">
+        <h1 class="text-3xl font-bold text-center mb-6">Veloria Trends</h1>
+
+        <input id="email" type="email" placeholder="Email" class="w-full p-3 border rounded mb-4">
+        <input id="pass" type="password" placeholder="Password" class="w-full p-3 border rounded mb-4">
+
+        <button onclick="login()" class="w-full bg-blue-600 text-white py-3 rounded-lg">
+            Login
+        </button>
+    </div>
+</section>
+
+<!-- ========================= NAVBAR ============================= -->
+<nav id="navbar" class="hidden bg-white shadow-md py-4 px-8 flex justify-between items-center">
+    <h1 class="text-3xl font-bold">Veloria <span class="text-blue-600">Trends</span></h1>
+
+    <div class="space-x-6 text-lg font-medium">
+        <button onclick="goTo('homePage')">Home</button>
+        <button onclick="goTo('clothesPage')">Clothes</button>
+        <button onclick="goTo('shoesPage')">Shoes</button>
+        <button onclick="goTo('sportsPage')">Sports</button>
+        <button onclick="goTo('bagsPage')">Bags</button>
+        <button onclick="goTo('watchesPage')">Watches</button>
+    </div>
+</nav>
+
+<!-- ========================= HOME PAGE ============================= -->
+<section id="homePage" class="page p-10">
+    <div class="text-center">
+        <h1 class="text-5xl font-bold mb-4">Welcome to Veloria Trends</h1>
+        <p class="text-lg mb-6">Fashion for Everyone.</p>
+
+        <img class="rounded-xl shadow-lg mx-auto w-2/3" 
+             src="https://images.unsplash.com/photo-1523381294911-8d3cead13475"/>
+    </div>
+</section>
+
+<!-- ========================= CLOTHES CHOOSE PAGE ============================= -->
+<section id="clothesPage" class="page p-10">
+    <h2 class="text-3xl font-bold mb-6">Clothes</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <button onclick="goTo('menPage')" 
+            class="bg-white p-10 shadow rounded-xl hover:scale-105 transition text-left">
+            <h3 class="text-2xl font-bold mb-3">Men</h3>
+            <p class="text-gray-600">Shirts, Jackets, Hoodies</p>
+        </button>
+
+        <button onclick="goTo('womenPage')" 
+            class="bg-white p-10 shadow rounded-xl hover:scale-105 transition text-left">
+            <h3 class="text-2xl font-bold mb-3">Women</h3>
+            <p class="text-gray-600">Dresses, Tops & more</p>
+        </button>
+    </div>
+</section>
+
+<!-- ========================= MEN PAGE ============================= -->
+<section id="menPage" class="page p-10">
+    <h2 class="text-3xl font-bold mb-6">Men's Collection</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white shadow p-5 rounded-xl">
+            <img src="https://images.unsplash.com/photo-1516822003754-cca485356ecb" class="rounded">
+            <h3 class="text-xl font-semibold mt-3">Men Jacket</h3>
+            <p>₹1599</p>
+        </div>
+
+        <div class="bg-white shadow p-5 rounded-xl">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" class="rounded">
+            <h3 class="text-xl font-semibold mt-3">Shirt</h3>
+            <p>₹999</p>
+        </div>
+
+        <div class="bg-white shadow p-5 rounded-xl">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" class="rounded">
+            <h3 class="text-xl font-semibold mt-3">Hoodie</h3>
+            <p>₹1299</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================= WOMEN PAGE ============================= -->
+<section id="womenPage" class="page p-10">
+    <h2 class="text-3xl font-bold mb-6">Women's Collection</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white shadow p-5 rounded-xl">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" class="rounded">
+            <h3 class="text-xl font-semibold mt-3">Jacket</h3>
+            <p>₹1799</p>
+        </div>
+
+        <div class="bg-white shadow p-5 rounded-xl">
+            <img src="https://images.unsplash.com/photo-1516763296043-f676c29044c8" class="rounded">
+            <h3 class="text-xl font-semibold mt-3">Top</h3>
+            <p>₹899</p>
+        </div>
+
+        <div class="bg-white shadow p-5 rounded-xl">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" class="rounded">
+            <h3 class="text-xl font-semibold mt-3">Dress</h3>
+            <p>₹1399</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================= SHOES PAGE ============================= -->
+<section id="shoesPage" class="page p-10">
+    <h2 class="text-3xl font-bold mb-6">Shoes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Running Shoes</h3>
+            <p>₹1599</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="rounded">
+            <h3 class="text-xl font-bold mt-3">White Sneakers</h3>
+            <p>₹1299</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Sports Shoes</h3>
+            <p>₹1499</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================= SPORTS PAGE ============================= -->
+<section id="sportsPage" class="page p-10">
+    <h2 class="text-3xl font-bold mb-6">Sports Wear</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1539883371341-2eb2fd417d3c" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Sports Jacket</h3>
+            <p>₹1299</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1606851092835-76e448d7d8e0" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Gym Bag</h3>
+            <p>₹899</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1526403222119-cf3c8990212c" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Training Tee</h3>
+            <p>₹599</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================= BAG PAGE ============================= -->
+<section id="bagsPage" class="page p-10">
+    <h2 class="text-3xl font-bold mb-6">Bags</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1600185365698-5da7365c1c97" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Handbag</h3>
+            <p>₹1199</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1590874103328-eac38b9d3a7d" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Backpack</h3>
+            <p>₹999</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1590874103331-8b9d3a7d" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Travel Bag</h3>
+            <p>₹1499</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================= WATCHES PAGE ============================= -->
+<section id="watchesPage" class="page p-10">
+    <h2 class="text-3xl font-bold mb-6">Watches</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Classic Watch</h3>
+            <p>₹1999</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Smart Watch</h3>
+            <p>₹2499</p>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded-xl">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" class="rounded">
+            <h3 class="text-xl font-bold mt-3">Digital Watch</h3>
+            <p>₹1499</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========================= JAVASCRIPT LOGIC ============================= -->
+<script>
+
+// login function
+function login() {
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("pass").value;
+
+    if (!email || !pass) {
+        alert("Enter both fields!");
+        return;
+    }
+
+    document.getElementById("loginPage").classList.remove("show");
+    document.getElementById("homePage").classList.add("show");
+
+    document.getElementById("navbar").classList.remove("hidden");
+}
+
+// page switcher
+function goTo(pageId) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
+    document.getElementById(pageId).classList.add("show");
+}
+
+</script>
+
+</body>
+</html>
